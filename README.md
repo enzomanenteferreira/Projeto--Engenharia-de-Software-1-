@@ -58,7 +58,7 @@ Serviços REST implementados na classe `UCEnderecoGeralServicos`, conforme arqui
 - **Java**
 - **Arquitetura N-Camadas**
 - **Servlets / REST API**
-- **HTML/CSS/JS** ou framework frontend à escolha
+- **HTML/CSS/JS**
 - **SGBD com Pool de Conexões**
 - **Bibliotecas de NLP / IA** (para T4B)
 
