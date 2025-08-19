@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Receita Médica</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Receita Médica</h1>
+    <!-- Botão para abrir o modal do chat -->
+    <button id="openChat">Abrir Chat</button>
+  </header>
+  <main>
+    <!-- Área dos formulários agrupados em uma grid para melhor disposição -->
+    <div class="form-container">
+      <!-- Cadastro de Endereço -->
+      <section id="cadastro-endereco">
+        <h2>Cadastrar Endereço</h2>
+        <form id="form-cadastrar-endereco">
+          <label for="cep">CEP:</label>
+          <input type="text" id="cep" name="cep" required>
+          <label for="id_cidade">ID Cidade:</label>
+          <input type="number" id="id_cidade" name="id_cidade" required>
+          <label for="id_bairro">ID Bairro:</label>
+          <input type="number" id="id_bairro" name="id_bairro" required>
+          <label for="id_logradouro">ID Logradouro:</label>
+          <input type="number" id="id_logradouro" name="id_logradouro" required>
+          <button type="submit">Cadastrar Endereço</button>
+        </form>
+      </section>
+
+      <!-- Cadastro de Paciente -->
+      <section id="cadastro-paciente">
+        <h2>Cadastrar Paciente</h2>
+        <form id="form-cadastrar-paciente">
+          <label for="nome_paciente">Nome do Paciente:</label>
+          <input type="text" id="nome_paciente" name="nome_paciente" required>
+          <label for="cpf">CPF:</label>
+          <input type="text" id="cpf" name="cpf" required>
+          <label for="rg">RG:</label>
+          <input type="text" id="rg" name="rg" required>
+          <label for="numero_endereco">Número do Endereço:</label>
+          <input type="text" id="numero_endereco" name="numero_endereco" required>
+          <label for="complemento_endereco">Complemento:</label>
+          <input type="text" id="complemento_endereco" name="complemento_endereco">
+          <label for="data_nascimento_paciente">Data Nasc. (yyyy-mm-dd):</label>
+          <input type="date" id="data_nascimento_paciente" name="data_nascimento_paciente" required>
+          <label for="cep_paciente">CEP (Endereço):</label>
+          <input type="text" id="cep_paciente" name="cep" required>
+          <button type="submit">Cadastrar Paciente</button>
+        </form>
+      </section>
+
+      <!-- Cadastro de Receita Médica -->
+      <section id="cadastro-receita">
+        <h2>Cadastrar Receita Médica</h2>
+        <form id="form-cadastrar-receita">
+          <label for="rg_paciente">RG do Paciente:</label>
+          <input type="text" id="rg_paciente" name="rg_paciente" required>
+          <label for="id_medico">ID do Médico:</label>
+          <input type="number" id="id_medico" name="id_medico" required>
+          <label for="data_receita">Data da Receita:</label>
+          <input type="date" id="data_receita" name="data_receita" required>
+          <label for="cod_cid">Código CID:</label>
+          <input type="number" id="cod_cid" name="cod_cid" required>
+          <fieldset>
+            <legend>Medicamento (1º item)</legend>
+            <label for="id_medicamento">ID do Medicamento:</label>
+            <input type="number" id="id_medicamento" name="id_medicamento" required>
+            <label for="data_inicio">Data Início:</label>
+            <input type="date" id="data_inicio" name="data_inicio" required>
+            <label for="data_fim">Data Fim:</label>
+            <input type="date" id="data_fim" name="data_fim">
+            <label for="posologia">Posologia:</label>
+            <input type="text" id="posologia" name="posologia" required>
+          </fieldset>
+          <button type="submit">Cadastrar Receita</button>
+        </form>
+      </section>
+
+      <!-- Consulta de Receita Médica -->
+      <section id="consulta-receita">
+        <h2>Consultar Receita Médica</h2>
+        <form id="form-consultar-receita">
+          <label for="nro_receita">Número da Receita:</label>
+          <input type="number" id="nro_receita" name="nro_receita" required>
+          <button type="submit">Consultar Receita</button>
+        </form>
+      </section>
+
+      <!-- Obter Bairros -->
+      <section id="obter-bairros">
+        <h2>Obter Bairros</h2>
+        <form id="form-obter-bairros">
+          <label for="id_bairro_consulta">ID (opcional):</label>
+          <input type="text" id="id_bairro_consulta" name="id">
+          <button type="submit">Obter Bairros</button>
+        </form>
+      </section>
+
+      <!-- Obter Cidade -->
+      <section id="obter-cidade">
+        <h2>Obter Cidade</h2>
+        <form id="form-obter-cidade">
+          <label for="id_cidade_consulta">ID da Cidade (opcional):</label>
+          <input type="text" id="id_cidade_consulta" name="id">
+          <button type="submit">Obter Cidade</button>
+        </form>
+      </section>
+
+      <!-- Obter Endereço Externo -->
+      <section id="obter-endereco">
+        <h2>Obter Endereço Externo</h2>
+        <form id="form-obter-endereco">
+          <label for="cep_endereco_externo">CEP:</label>
+          <input type="text" id="cep_endereco_externo" name="cep" required>
+          <button type="submit">Obter Endereço</button>
+        </form>
+      </section>
+
+      <!-- Obter Endereço por CEP -->
+      <section id="obter-endereco-por-cep">
+        <h2>Obter Endereço por CEP</h2>
+        <form id="form-obter-endereco-por-cep">
+          <label for="cep_consulta">CEP:</label>
+          <input type="text" id="cep_consulta" name="cep" required>
+          <button type="submit">Obter Endereço por CEP</button>
+        </form>
+      </section>
+
+      <!-- Obter Endereço por ID -->
+      <section id="obter-endereco-por-id">
+        <h2>Obter Endereço por ID</h2>
+        <form id="form-obter-endereco-por-id">
+          <label for="endereco_id">ID do Endereço:</label>
+          <input type="number" id="endereco_id" name="id" required>
+          <button type="submit">Obter Endereço por ID</button>
+        </form>
+      </section>
+
+      <!-- Obter Logradouros -->
+      <section id="obter-logradouros">
+        <h2>Obter Logradouros</h2>
+        <form id="form-obter-logradouros">
+          <button type="submit">Obter Logradouros</button>
+        </form>
+      </section>
+
+      <!-- Obter Pacientes -->
+      <section id="obter-pacientes">
+        <h2>Obter Pacientes</h2>
+        <form id="form-obter-pacientes">
+          <button type="submit">Obter Pacientes</button>
+        </form>
+      </section>
+    </div>
+
+    <!-- Área para exibir as respostas formatadas -->
+    <section id="output-section">
+      <h2>Resultados</h2>
+      <div id="output"></div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Sistema de Gerenciamento de Dados</p>
+  </footer>
+
+  <!-- Modal do Chat -->
+  <div id="chatModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Chat com a IA</h2>
+      <div id="chatOutput"></div>
+      <form id="form-chat-ia" autocomplete="off">
+        <input type="text" id="textoUsuario" placeholder="Digite sua mensagem" autocomplete="off" required>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
